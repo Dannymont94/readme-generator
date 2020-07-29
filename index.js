@@ -7,7 +7,7 @@ const questions = [
     // Title of Project (required)
     {
         name: 'title',
-        message: 'What is the title of your project?',
+        message: 'What is the title of your project? (required)',
         type: 'input',
         validate: titleInput => {
             if (titleInput) {
@@ -21,7 +21,7 @@ const questions = [
     // Credits (required)
     {
         name: 'credits',
-        message: 'Enter the names of those who have contributed to the project, including your own.',
+        message: 'Enter the names of those who have contributed to the project, including your own. (required)',
         type: 'input',
         validate: creditsInput => {
             if (creditsInput) {
@@ -34,7 +34,7 @@ const questions = [
     // GitHub Username (required)
     {
         name: 'github',
-        message: 'Enter your GitHub username.',
+        message: 'Enter your GitHub username. (required)',
         type: 'input',
         validate: githubInput => {
             if (githubInput) {
@@ -47,7 +47,7 @@ const questions = [
     // Email Address (required)
     {
         name: 'email',
-        message: 'Enter your email address.',
+        message: 'Enter your email address. (required)',
         type: 'input',
         validate: emailInput => {
             if (emailInput) {
@@ -60,7 +60,7 @@ const questions = [
     // Description (required)
     {
         name: 'description',
-        message: 'Enter a description for your project.',
+        message: 'Enter a description for your project. (required)',
         type: 'input',
         validate: descriptionInput => {
             if (descriptionInput) {
@@ -74,13 +74,13 @@ const questions = [
     // Installation (optional)
     {
         name: 'installation',
-        message: 'What are the steps required to install your project, if any?',
+        message: 'What are the steps required to install your project, if any? (optional)',
         type: 'input'
     },
     // Usage (required)
     {
         name: 'usage',
-        message: 'Provide some instructions and examples for how your project is used.',
+        message: 'Provide some instructions and examples for how your project is used. (required)',
         type: 'input',
         validate: usageInput => {
             if (usageInput) {
@@ -93,7 +93,7 @@ const questions = [
     // License (required)
     {
         name: 'license',
-        message: 'Enter a license for your project.',
+        message: 'Enter a license for your project. (required)',
         type: 'input',
         default: 'MIT',
         validate: licenseInput => {
@@ -108,13 +108,13 @@ const questions = [
     // Contributing (optional)
     {
         name: 'contributing',
-        message: 'How can others contribute to this project?',
+        message: 'How can others contribute to this project? (optional)',
         type: 'input'
     },
     // Tests (optional)
     {
         name: 'tests',
-        message: 'Provide examples on how to run the tests provided for this project.',
+        message: 'Provide examples on how to run the tests provided for this project. (optional)',
         type: 'input'
     }
 ];
@@ -125,11 +125,11 @@ const mockAnswers = {
     github: 'Dannymont94',
     email: 'dannym94@gmail.com',
     description: 'It generates readme files for your projects.',
-    // installation: 'Clone repo, install dependencies with node.',
+    installation: 'Clone repo, install dependencies with node.',
     usage: 'Run index with node and answer questions to generate a readme file.',
     license: 'MIT',
-    // contributing: 'Please provide credit.',
-    // tests: 'Run them as you please.'
+    contributing: 'Please provide credit.',
+    tests: 'Run them as you please.'
 };
 
 // function to write README file
@@ -139,9 +139,9 @@ function writeToFile(fileName, markdown) {
 
 (async function init() {
     try {
-        // const answers = await inquirer.prompt(questions);
-        const fileName = mockAnswers.title;
-        const markdown = generateMarkdown(mockAnswers);
+        const answers = await inquirer.prompt(questions);
+        const fileName = answers.title;
+        const markdown = generateMarkdown(answers);
         writeToFile(fileName, markdown);
         console.log('Readme successfully generated in dist folder!');
     } catch (err) {

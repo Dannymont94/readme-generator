@@ -1,11 +1,12 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
     // need to generate badge based on license
-    console.log(data);
 
-    let installation = '';
-    let contributing = '';
-    let tests = '';
+
+    // instantiate optional sections as empty strings
+    let installationMarkdown = '';
+    let contributingMarkdown = '';
+    let testsMarkdown = '';
 
     // dynamically generate table of contents based on user answering optional questions regarding installation, contributing, tests
     let tableofContents = `##Table of Contents`;
@@ -15,7 +16,7 @@ function generateMarkdown(data) {
         tableofContents += `
 * [Installation](#installation)`;
 
-        installation = `
+        installationMarkdown = `
 ## Installation
 ${data.installation}
 `;
@@ -31,7 +32,7 @@ ${data.installation}
         tableofContents += `
 * [Contributing](#contributing)`;
 
-        contributing = `
+        contributingMarkdown = `
 ## Contributing
 ${data.contributing}
 `;
@@ -42,7 +43,7 @@ ${data.contributing}
         tableofContents += `
 * [Tests](#tests)`;
 
-        tests = `## Tests
+        testsMarkdown = `## Tests
 ${data.tests}
 `;
     }
@@ -50,15 +51,13 @@ ${data.tests}
     tableofContents += `
 * [Questions](#questions)`;
 
-
-
     return `# ${data.title}
 
 ## Description
 ${data.description}
 
 ${tableofContents}
-${installation}
+${installationMarkdown}
 ## Usage
 ${data.usage}
 
@@ -67,23 +66,10 @@ ${data.credits}
 
 ## License
 ${data.license}
-${contributing}
-${tests}
+${contributingMarkdown}
+${testsMarkdown}
 ## Questions
 Reach out to me with any questions by connecting with me on [GitHub](https://github.com/${data.github}) or sending an email to ${data.email}.`;
 }
 
 module.exports = generateMarkdown;
-
-// {
-//     title: 'readme generator',
-//     credits: 'Daniel Monterrosa',
-//     github: 'Dannymont94',
-//     email: 'dannym94@gmail.com',
-//     description: 'It generates readme files for your projects.',
-//     installation: 'Clone repo, install dependencies with node.',
-//     usage: 'Run index with node and answer questions to generate a readme file.',
-//     license: 'MIT',
-//     contributing: 'Please provide credit.',
-//     tests: 'Run them as you please.'
-// };
