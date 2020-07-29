@@ -71,19 +71,33 @@ const questions = [
             }
         }
     },
-    // Installation
+    // Installation (required)
     {
         name: 'installation',
-        message: 'What are the steps required to install your project, if any?',
-        type: 'input'
+        message: 'What are the steps required to install your project?',
+        type: 'input',
+        validate: installationInput => {
+            if (installationInput) {
+                return true;
+            } else {
+                console.log('Please outline the steps required to install your project!')
+            }
+        }
     },
-    // Usage
+    // Usage (required)
     {
         name: 'usage',
         message: 'Provide some instructions and examples for how your project is used.',
-        type: 'input'
+        type: 'input',
+        validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log('Please provide instructions and examples for how your project is used!')
+            }
+        }
     },
-    // License (provide list of options) (need to generate a badge near the top of the readme for selected license)
+    // License (required)
     {
         name: 'license',
         message: 'Enter a license for your project.',
@@ -98,19 +112,32 @@ const questions = [
             }
         }
     },
-    // Contributing
+    // Contributing (required)
     {
         name: 'contributing',
         message: 'How can others contribute to this project?',
-        type: 'input'
+        type: 'input',
+        validate: contributingInput => {
+            if (contributingInput) {
+                return true;
+            } else {
+                console.log('Please explain how others can contribute to this project!')
+            }
+        }
     },
-    // Tests
+    // Tests (required)
     {
         name: 'tests',
         message: 'Provide examples on how to run the tests provided for this project.',
-        type: 'input'
+        type: 'input',
+        validate: testInput => {
+            if (testInput) {
+                return true;
+            } else {
+                console.log('Please provide examples on how to run the tests for this project!')
+            }
+        }
     }
-    // Table of Contents (generate links based on names of key value pairs in answers object)
 ];
 
 const mockAnswers = {
@@ -133,9 +160,9 @@ function writeToFile(fileName, markdown) {
 
 (async function init() {
     try {
-        // const answers = await inquirer.prompt(questions);
-        const fileName = mockAnswers.title;
-        const markdown = generateMarkdown(mockAnswers);
+        const answers = await inquirer.prompt(questions);
+        const fileName = answers.title;
+        const markdown = generateMarkdown(answers);
         writeToFile(fileName, markdown);
         console.log('Readme successfully generated in dist folder!');
     } catch (err) {

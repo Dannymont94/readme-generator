@@ -1,12 +1,18 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
+    // need to generate badge based on license
     return `# ${data.title}
 
 ## Description
 ${data.description}
 
 ## Table of Contents
-need to dynamically generate based on user's selections
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
 ## Installation
 ${data.installation}
@@ -31,14 +37,14 @@ Reach out to me with any questions by connecting with me on [GitHub](https://git
 module.exports = generateMarkdown;
 
 // {
-//     title: 'readme generator', (REQUIRED)
-//     credits: 'Daniel Monterrosa', (REQUIRED)
-//     github: 'Dannymont94', (REQUIRED)
-//     email: 'dannym94@gmail.com', (REQUIRED)
-//     description: 'It generates readme files for your projects.', (REQUIRED)
-//     installation: 'Clone repo, install dependencies with node.', (OPTIONAL)
-//     usage: 'Run index with node and answer questions to generate a readme file.', (OPTIONAL)
-//     license: 'MIT', (REQUIRED)
-//     contributing: 'Please provide credit.', (OPTIONAL)
-//     tests: 'Run them as you please.' (OPTIONAL)
+//     title: 'readme generator',
+//     credits: 'Daniel Monterrosa',
+//     github: 'Dannymont94',
+//     email: 'dannym94@gmail.com',
+//     description: 'It generates readme files for your projects.',
+//     installation: 'Clone repo, install dependencies with node.',
+//     usage: 'Run index with node and answer questions to generate a readme file.',
+//     license: 'MIT',
+//     contributing: 'Please provide credit.',
+//     tests: 'Run them as you please.'
 // };
