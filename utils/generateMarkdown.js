@@ -1,7 +1,18 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-    // need to generate badge based on license
-
+    // generate badge url based on license
+    let badgeUrl = '';
+    if (data.license === 'MIT') {
+        badgeUrl = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+    }
+    
+    if (data.license === 'ISC') {
+        badgeUrl = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
+    }
+    
+    if (data.license === 'GNU GPLv3') {
+        badgeUrl = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+    }
 
     // instantiate optional sections as empty strings
     let installationMarkdown = '';
@@ -9,7 +20,7 @@ function generateMarkdown(data) {
     let testsMarkdown = '';
 
     // dynamically generate table of contents based on user answering optional questions regarding installation, contributing, tests
-    let tableofContents = `##Table of Contents`;
+    let tableofContents = `## Table of Contents`;
     
     // generate installation section only if user provides installation instructions
     if (data.installation) { 
@@ -52,6 +63,8 @@ ${data.tests}
 * [Questions](#questions)`;
 
     return `# ${data.title}
+
+${badgeUrl}
 
 ## Description
 ${data.description}
