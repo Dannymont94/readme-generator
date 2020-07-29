@@ -3,20 +3,28 @@ function generateMarkdown(data) {
     return `# ${data.title}
 
 ## Description
+${data.description}
 
 ## Table of Contents
+need to dynamically generate based on user's selections
 
 ## Installation
+${data.installation}
 
 ## Usage
+${data.usage}
 
 ## License
+${data.license}
 
 ## Contributing
+${data.contributing}
 
 ## Tests
+${data.tests}
 
 ## Questions
+Reach out to me with any questions by connecting with me on [GitHub](https://github.com/${data.github}) or sending an email to ${data.email}.
 `;
 }
 

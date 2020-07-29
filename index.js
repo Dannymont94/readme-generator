@@ -114,7 +114,7 @@ const questions = [
 ];
 
 const mockAnswers = {
-    title: 'readme generator',
+    title: 'Readme Generator',
     credits: 'Daniel Monterrosa',
     github: 'Dannymont94',
     email: 'dannym94@gmail.com',
@@ -133,9 +133,9 @@ function writeToFile(fileName, markdown) {
 
 (async function init() {
     try {
-        const answers = await inquirer.prompt(questions);
-        const fileName = answers.title;
-        const markdown = generateMarkdown(answers);
+        // const answers = await inquirer.prompt(questions);
+        const fileName = mockAnswers.title;
+        const markdown = generateMarkdown(mockAnswers);
         writeToFile(fileName, markdown);
         console.log('Readme successfully generated in dist folder!');
     } catch (err) {
