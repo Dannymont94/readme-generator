@@ -1,24 +1,55 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
     // need to generate badge based on license
+    console.log(data);
+
+    // dynamically generate table of contents based on user answering optional questions regarding installation, contributing, tests
+    let tableofContents = `##Table of Contents`;
+
+    if (data.installation) { 
+        tableofContents += `
+* [Installation](#installation)`;
+    }
+
+    tableofContents += `
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)`;
+    
+    if (data.contributing) {
+        tableofContents += `
+* [Contributing](#contributing)`;
+    }
+    
+    if (data.tests) {
+        tableofContents += `
+* [Tests](#tests)`;
+    }
+
+    tableofContents += `
+* [Questions](#questions)`;
+
+    // generate installation section only if user provides installation instructions
+
+    // generate contributing section only if user provides contributor names
+
+    // generate tests section only if user provides test instructions
+
     return `# ${data.title}
 
 ## Description
 ${data.description}
 
-## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
+${tableofContents}
 
 ## Installation
 ${data.installation}
 
 ## Usage
 ${data.usage}
+
+## Credits
+${data.credits}
 
 ## License
 ${data.license}

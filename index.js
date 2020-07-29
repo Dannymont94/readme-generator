@@ -21,7 +21,7 @@ const questions = [
     // Credits (required)
     {
         name: 'credits',
-        message: 'Enter the names of those who have contributed to the project.',
+        message: 'Enter the names of those who have contributed to the project, including your own.',
         type: 'input',
         validate: creditsInput => {
             if (creditsInput) {
@@ -71,18 +71,11 @@ const questions = [
             }
         }
     },
-    // Installation (required)
+    // Installation (optional)
     {
         name: 'installation',
-        message: 'What are the steps required to install your project?',
-        type: 'input',
-        validate: installationInput => {
-            if (installationInput) {
-                return true;
-            } else {
-                console.log('Please outline the steps required to install your project!')
-            }
-        }
+        message: 'What are the steps required to install your project, if any?',
+        type: 'input'
     },
     // Usage (required)
     {
@@ -112,31 +105,17 @@ const questions = [
             }
         }
     },
-    // Contributing (required)
+    // Contributing (optional)
     {
         name: 'contributing',
         message: 'How can others contribute to this project?',
-        type: 'input',
-        validate: contributingInput => {
-            if (contributingInput) {
-                return true;
-            } else {
-                console.log('Please explain how others can contribute to this project!')
-            }
-        }
+        type: 'input'
     },
-    // Tests (required)
+    // Tests (optional)
     {
         name: 'tests',
         message: 'Provide examples on how to run the tests provided for this project.',
-        type: 'input',
-        validate: testInput => {
-            if (testInput) {
-                return true;
-            } else {
-                console.log('Please provide examples on how to run the tests for this project!')
-            }
-        }
+        type: 'input'
     }
 ];
 
