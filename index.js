@@ -127,15 +127,16 @@ const mockAnswers = {
 };
 
 // function to write README file
-function writeToFile(markdown) {
-    fs.promises.writeFile('./dist/readme.md', markdown)
+function writeToFile(fileName, markdown) {
+    fs.promises.writeFile(`./dist/${fileName}.md`, markdown)
 }
 
 (async function init() {
     try {
         const answers = await inquirer.prompt(questions);
+        const fileName = answers.title;
         const markdown = generateMarkdown(answers);
-        writeToFile(markdown);
+        writeToFile(fileName, markdown);
         console.log('Readme successfully generated in dist folder!')
     } catch (err) {
         console.log(err);
