@@ -94,8 +94,8 @@ const questions = [
     {
         name: 'license',
         message: 'Enter a license for your project. (required)',
-        type: 'input',
-        default: 'MIT',
+        type: 'list',
+        choices: ['MIT', 'ISC', 'GNU GPLv3'],
         validate: licenseInput => {
             if (licenseInput) {
                 return true;
