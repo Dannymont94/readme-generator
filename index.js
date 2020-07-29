@@ -125,11 +125,11 @@ const mockAnswers = {
     github: 'Dannymont94',
     email: 'dannym94@gmail.com',
     description: 'It generates readme files for your projects.',
-    installation: 'Clone repo, install dependencies with node.',
+    // installation: 'Clone repo, install dependencies with node.',
     usage: 'Run index with node and answer questions to generate a readme file.',
     license: 'MIT',
-    contributing: 'Please provide credit.',
-    tests: 'Run them as you please.'
+    // contributing: 'Please provide credit.',
+    // tests: 'Run them as you please.'
 };
 
 // function to write README file
@@ -139,9 +139,9 @@ function writeToFile(fileName, markdown) {
 
 (async function init() {
     try {
-        const answers = await inquirer.prompt(questions);
-        const fileName = answers.title;
-        const markdown = generateMarkdown(answers);
+        // const answers = await inquirer.prompt(questions);
+        const fileName = mockAnswers.title;
+        const markdown = generateMarkdown(mockAnswers);
         writeToFile(fileName, markdown);
         console.log('Readme successfully generated in dist folder!');
     } catch (err) {
