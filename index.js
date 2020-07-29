@@ -5,14 +5,104 @@ const generateMarkdown = require('generateMarkdown');
 // array of questions for user
 const questions = [
     // Title of Project (required)
+    {
+        name: 'title',
+        message: 'What is your title of your project?',
+        type: 'input',
+        validate: titleInput => {
+            if (titleInput) {
+                return true;
+            } else {
+                console.log('Please enter the title of your project!');
+                return false;
+            }
+        }
+    },
+    // Credits (required)
+    {
+        name: 'credits',
+        message: 'Enter the names of those who have contributed to the project.',
+        type: 'input',
+        validate: creditsInput => {
+            if (creditsInput) {
+                return true;
+            } else {
+                console.log('Please enter the names of those who contributed to the project!')
+            }
+        }
+    },
+    // GitHub Username (required)
+    {
+        name: 'github',
+        message: 'Enter your GitHub username.',
+        type: 'input',
+        validate: githubInput => {
+            if (githubInput) {
+                return true;
+            } else {
+                console.log('Please enter your GitHub username!')
+            }
+        }
+    },
+    // Email Address (required)
+    {
+        name: 'email',
+        message: 'Enter your email address.',
+        type: 'input',
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            } else {
+                console.log('Please enter your email address!')
+            }
+        }
+    },
     // Description (required)
-    // Table of Contents (generate links based on )
+    {
+        name: 'description',
+        message: 'Enter a description for your project.',
+        type: 'input',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+                return true;
+            } else {
+                console.log('Please enter a description for your project!');
+                return false;
+            }
+        }
+    },
     // Installation
+    {
+        name: 'installation',
+        message: 'What are the steps required to install your project, if any?',
+        type: 'input'
+    },
     // Usage
-    // License (provide list of options) (generate a badge near the top of the readme for selected license)
+    {
+        name: 'usage',
+        message: 'Provide some instructions and examples for how your project is used.',
+        type: 'input'
+    },
+    // License (provide list of options) (need to generate a badge near the top of the readme for selected license)
+    {
+        name: 'license',
+        message: 'Enter a license for your project.',
+        type: 'input',
+        default: 'MIT'
+    },
     // Contributing
+    {
+        name: 'contributing',
+        message: 'How can others contribute to this project?',
+        type: 'input'
+    },
     // Tests
-    // Questions (ask for GitHub profile info and email address so that users now where to send questions)
+    {
+        name: 'tests',
+        message: 'Provide examples on how to run the tests provided for this project.',
+        type: 'input'
+    }
+    // Table of Contents (generate links based on names of key value pairs in answers object)
 ];
 
 // function to write README file
@@ -22,7 +112,7 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    // call inquirer prompt
+    // call inquirer.prompt
     // call generateMarkdown(answers)
     // call writeToFile(fileName, data)
     // console.log something to let user know process was successful
