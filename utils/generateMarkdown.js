@@ -65,7 +65,7 @@ ${data.usage}
 ${data.credits}
 
 ## License
-${data.license}
+${data.title} is licensed under the ${data.license} license.
 ${contributingMarkdown}
 ${testsMarkdown}
 ## Questions
