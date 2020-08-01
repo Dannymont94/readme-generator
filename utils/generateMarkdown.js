@@ -29,7 +29,10 @@ function generateMarkdown(data) {
 
         installationMarkdown = `
 ## Installation
+To install dependencies, run the following command:
+\`\`\`
 ${data.installation}
+\`\`\`
 `;
     }
 
