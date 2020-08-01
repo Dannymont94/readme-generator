@@ -26,7 +26,7 @@ Run index.js with node and answer the prompts that appear in the command line. A
 Here is a short [demo video](https://drive.google.com/file/d/1TsK2L01-ddLsjpLZHnWRmylf_M9MSykp/view) to help you use the Readme Generator.
 
 ## Sample Generated Readme
-Here is a [sample generated Readme](dist\sample-readme.md).
+Here is a [sample generated Readme](https://github.com/Dannymont94/readme-generator/blob/master/dist/sample-readme.md).
 
 ## Credits
 Created by Daniel Monterrosa.
