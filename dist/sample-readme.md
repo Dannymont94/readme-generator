@@ -24,7 +24,7 @@ npm install
 Run index.js with node and answer the questions to create a professional readme for your GitHub project.
 
 ## Credits
-Created by Daniel Monterrosa
+Created by Daniel Monterrosa.
 
 ## License
 Readme Generator is licensed under the MIT license.

@@ -81,7 +81,7 @@ ${installationMarkdown}
 ${data.usage}
 
 ## Credits
-Created by ${data.credits}
+Created by ${data.credits}.
 
 ## License
 ${data.title} is licensed under the ${data.license} license.
