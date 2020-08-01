@@ -55,7 +55,10 @@ ${data.contributing}
 * [Tests](#tests)`;
 
         testsMarkdown = `## Tests
+To run tests, run the following command:
+\`\`\`
 ${data.tests}
+\`\`\`
 `;
     }
 
@@ -75,7 +78,7 @@ ${installationMarkdown}
 ${data.usage}
 
 ## Credits
-${data.credits}
+Created by ${data.credits}
 
 ## License
 ${data.title} is licensed under the ${data.license} license.

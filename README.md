@@ -18,7 +18,14 @@ Readme Generator is a command-line application that dynamically generates a prof
 Clone the repo, install node dependencies, and run index.js
 
 ## Usage
-Run index.js with node and answer the questions that appear in the command line. After answering all the questions, a readme file will be generated in the dist folder.
+Run index.js with node and answer the questions that appear in the command line. After answering all the questions, a readme file will be generated in the output folder.
+
+## Demo Video
+<!-- show how to use starting from running the file in node -->
+<!-- make sure to show final product in video -->
+
+## Sample Generated Readme
+
 
 ## Credits
 Created by Daniel Monterrosa

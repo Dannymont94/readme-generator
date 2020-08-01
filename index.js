@@ -34,7 +34,7 @@ const questions = [
     // GitHub Username (required)
     {
         name: 'github',
-        message: 'Enter your GitHub username. (required)',
+        message: 'What is your GitHub username? (required)',
         type: 'input',
         validate: githubInput => {
             if (githubInput) {
@@ -47,7 +47,7 @@ const questions = [
     // Email Address (required)
     {
         name: 'email',
-        message: 'Enter your email address. (required)',
+        message: 'What is your email address? (required)',
         type: 'input',
         validate: emailInput => {
             if (emailInput) {
@@ -60,7 +60,7 @@ const questions = [
     // Description (required)
     {
         name: 'description',
-        message: 'Enter a description for your project. (required)',
+        message: 'Enter a description of your project. (required)',
         type: 'input',
         validate: descriptionInput => {
             if (descriptionInput) {
@@ -114,7 +114,7 @@ const questions = [
     // Tests (optional)
     {
         name: 'tests',
-        message: 'Provide examples on how to run the tests provided for this project. (optional)',
+        message: 'How can users run tests? (optional)',
         type: 'input'
     }
 ];
@@ -134,7 +134,7 @@ const mockAnswers = {
 
 // function to write README file
 function writeToFile(fileName, markdown) {
-    fs.promises.writeFile(`./dist/${fileName}.md`, markdown);
+    fs.promises.writeFile(`./output/${fileName}.md`, markdown);
 }
 
 (async function init() {
@@ -143,7 +143,7 @@ function writeToFile(fileName, markdown) {
         const fileName = answers.title;
         const markdown = generateMarkdown(answers);
         writeToFile(fileName, markdown);
-        console.log('Readme successfully generated in dist folder!');
+        console.log('Readme successfully generated in output folder!');
     } catch (err) {
         console.log(err);
     }
